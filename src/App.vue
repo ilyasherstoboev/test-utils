@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import PostList from './components/PostList.vue'
-import StoreCounter from './components/StoreCounter.vue'
-import ThePassword from './components/ThePassword.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <div>
-    <ThePassword :min-length="8" />
-    <PostList />
-    <StoreCounter />
+    <h1>Hello App!</h1>
+    <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
+    <nav>
+      <RouterLink to="/">Go to Home</RouterLink>
+      <RouterLink to="/tests">Go to test</RouterLink>
+    </nav>
+    <main>
+      <RouterView />
+    </main>
   </div>
 </template>
