@@ -7,11 +7,14 @@ const handleClick = () => {
   count.value += 1
   emits('increment', {
     count: count.value,
-    isEven: count.value % 2 === 0
+    isEven: count.value % 2 === 0,
   })
 }
 </script>
 
 <template>
-  <button @click="handleClick">Increment</button>
+  <div>
+    <button @click="handleClick">Increment</button>
+    <label>Count: {{ count }}</label>
+  </div>
 </template>
